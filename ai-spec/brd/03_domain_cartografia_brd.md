@@ -29,69 +29,70 @@ Este domínio fornece a camada de visualização e interação espacial utilizad
 | BIZ-03-001 | O sistema deve fornecer um mapa interativo web com funcionalidades de zoom, pan e navegação fluida sobre a base cartográfica do município. |
 | BIZ-03-002 | O mapa deve suportar a exibição simultânea de múltiplas camadas sobrepostas, com controle individual de visibilidade por camada. |
 | BIZ-03-003 | O sistema deve permitir a seleção de elementos no mapa (polígonos, pontos) com exibição de informações associadas (popup ou painel lateral). |
+| BIZ-03-004 | O motor de mapa deve adotar arquitetura plug-and-play de provedores de mapas base, permitindo integração com no mínimo: OpenStreetMap com Leaflet (gratuito, compatível com servidor self-hosted), QGIS (gratuito), ArcGIS, Google Maps e Mapbox. O provedor padrão deve ser OpenStreetMap com Leaflet. A ativação de provedores adicionais deve ser configurável por tenant, mediante fornecimento das respectivas chaves de acesso (API Keys) pelo cliente. |
 
 ### 2.2 Desenho e Edição de Polígonos
 
 | ID | Requisito |
 |----|-----------|
-| BIZ-03-004 | O sistema deve fornecer ferramentas de desenho preciso de polígonos sobre o mapa, com funcionalidades similares a ferramentas CAD (snap, alinhamento, vértices editáveis). |
-| BIZ-03-005 | Deve ser possível editar polígonos existentes: mover vértices, adicionar/remover pontos, redimensionar e rotacionar. |
-| BIZ-03-006 | Cada polígono deve poder ser associado a uma ou mais camadas e a entidades de outros domínios (imóvel, zona, área de fiscalização). |
+| BIZ-03-005 | O sistema deve fornecer ferramentas de desenho preciso de polígonos sobre o mapa, com funcionalidades similares a ferramentas CAD (snap, alinhamento, vértices editáveis). |
+| BIZ-03-006 | Deve ser possível editar polígonos existentes: mover vértices, adicionar/remover pontos, redimensionar e rotacionar. |
+| BIZ-03-007 | Cada polígono deve poder ser associado a uma ou mais camadas e a entidades de outros domínios (imóvel, zona, área de fiscalização). |
 
 ### 2.3 Camadas (Layers)
 
 | ID | Requisito |
 |----|-----------|
-| BIZ-03-007 | O sistema deve permitir a criação e gestão de camadas com três níveis de visibilidade: pública (visível a todos, inclusive cidadãos), privada do usuário, ou restrita a perfis/setores específicos. |
-| BIZ-03-008 | Cada camada deve possuir metadados configuráveis: nome, descrição, cor/estilo de renderização, nível de zoom mínimo/máximo para exibição. |
-| BIZ-03-009 | O Administrador do Sistema deve poder definir quais camadas são visíveis no Portal do Cidadão. |
-| BIZ-03-010 | O sistema deve permitir ordenação (z-index) das camadas para controle de sobreposição visual. |
+| BIZ-03-008 | O sistema deve permitir a criação e gestão de camadas com três níveis de visibilidade: pública (visível a todos, inclusive cidadãos), privada do usuário, ou restrita a perfis/setores específicos. |
+| BIZ-03-009 | Cada camada deve possuir metadados configuráveis: nome, descrição, cor/estilo de renderização, nível de zoom mínimo/máximo para exibição. |
+| BIZ-03-010 | O Administrador do Sistema deve poder definir quais camadas são visíveis no Portal do Cidadão. |
+| BIZ-03-011 | O sistema deve permitir ordenação (z-index) das camadas para controle de sobreposição visual. |
 
 ### 2.4 Ferramentas de Medição
 
 | ID | Requisito |
 |----|-----------|
-| BIZ-03-011 | O sistema deve fornecer ferramenta de medição de distância entre dois ou mais pontos no mapa, exibindo o resultado em metros. |
-| BIZ-03-012 | O sistema deve fornecer ferramenta de cálculo de área de polígonos, exibindo o resultado em metros quadrados (m²). |
+| BIZ-03-012 | O sistema deve fornecer ferramenta de medição de distância entre dois ou mais pontos no mapa, exibindo o resultado em metros. |
+| BIZ-03-013 | O sistema deve fornecer ferramenta de cálculo de área de polígonos, exibindo o resultado em metros quadrados (m²). |
 
 ### 2.5 Coordenadas e Datum
 
 | ID | Requisito |
 |----|-----------|
-| BIZ-03-013 | O sistema deve suportar coordenadas no sistema UTM e em Latitude/Longitude (graus decimais). |
-| BIZ-03-014 | O datum geodésico padrão deve ser SIRGAS 2000, conforme resolução IBGE. |
-| BIZ-03-015 | O sistema deve exibir as coordenadas do cursor em tempo real durante navegação no mapa, com opção de alternar entre UTM e Lat/Long. |
-| BIZ-03-016 | O sistema deve permitir navegação direta a um ponto por inserção de coordenadas (UTM ou Lat/Long). |
+| BIZ-03-014 | O sistema deve suportar coordenadas no sistema UTM e em Latitude/Longitude (graus decimais). |
+| BIZ-03-015 | O datum geodésico padrão deve ser SIRGAS 2000, conforme resolução IBGE. |
+| BIZ-03-016 | O sistema deve exibir as coordenadas do cursor em tempo real durante navegação no mapa, com opção de alternar entre UTM e Lat/Long. |
+| BIZ-03-017 | O sistema deve permitir navegação direta a um ponto por inserção de coordenadas (UTM ou Lat/Long). |
 
 ### 2.6 Importação de Arquivos Geoespaciais
 
 | ID | Requisito |
 |----|-----------|
-| BIZ-03-017 | O sistema deve suportar importação de arquivos nos formatos: KMZ, KML, Shapefile (.shp + arquivos auxiliares) e TXT com coordenadas. |
-| BIZ-03-018 | Na importação, o sistema deve validar o datum de origem e converter para SIRGAS 2000 quando necessário. |
-| BIZ-03-019 | Arquivos importados devem gerar camadas ou polígonos editáveis dentro do sistema. |
-| BIZ-03-020 | O sistema deve permitir importação em massa de coordenadas de lotes a partir de arquivos TXT estruturados. |
+| BIZ-03-018 | O sistema deve suportar importação de arquivos nos formatos: KMZ, KML, Shapefile (.shp + arquivos auxiliares) e TXT com coordenadas. |
+| BIZ-03-019 | Na importação, o sistema deve validar o datum de origem e converter para SIRGAS 2000 quando necessário. |
+| BIZ-03-020 | Arquivos importados devem gerar camadas ou polígonos editáveis dentro do sistema. |
+| BIZ-03-021 | O sistema deve permitir importação em massa de coordenadas de lotes a partir de arquivos TXT estruturados. |
 
 ### 2.7 Imagens de Satélite
 
 | ID | Requisito |
 |----|-----------|
-| BIZ-03-021 | O sistema deve permitir a visualização de imagens de satélite como camada de fundo do mapa. |
-| BIZ-03-022 | O sistema deve suportar visualização de imagens de satélite de múltiplos períodos históricos, permitindo análise temporal (comparação entre datas). |
-| BIZ-03-023 | O provedor e modelo de aquisição de imagens de satélite é externo ao sistema; o GEO consome imagens fornecidas por terceiros via API ou importação de arquivos. |
+| BIZ-03-022 | O sistema deve permitir a visualização de imagens de satélite como camada de fundo do mapa. |
+| BIZ-03-023 | O sistema deve suportar visualização de imagens de satélite de múltiplos períodos históricos, permitindo análise temporal (comparação entre datas). |
+| BIZ-03-024 | O provedor e modelo de aquisição de imagens de satélite é externo ao sistema; o GEO consome imagens fornecidas por terceiros via API ou importação de arquivos. |
 
 ### 2.8 Street View
 
 | ID | Requisito |
 |----|-----------|
-| BIZ-03-024 | O sistema deve integrar visualização Street View (Google) a partir de qualquer ponto selecionado no mapa. |
-| BIZ-03-025 | O acesso ao Street View deve estar disponível tanto no módulo do servidor quanto no Portal do Cidadão. |
+| BIZ-03-025 | O sistema deve integrar visualização Street View (Google) a partir de qualquer ponto selecionado no mapa. |
+| BIZ-03-026 | O acesso ao Street View deve estar disponível tanto no módulo do servidor quanto no Portal do Cidadão. |
 
 ### 2.9 Exportação
 
 | ID | Requisito |
 |----|-----------|
-| BIZ-03-026 | O sistema deve permitir a impressão e exportação de imagem do mapa (recorte da área visível ou de um imóvel específico) em formato adequado para impressão (PDF ou imagem). |
+| BIZ-03-027 | O sistema deve permitir a impressão e exportação de imagem do mapa (recorte da área visível ou de um imóvel específico) em formato adequado para impressão (PDF ou imagem). |
 
 ---
 

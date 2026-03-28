@@ -30,52 +30,54 @@ Este domínio é essencialmente um consumidor dos demais: obtém dados do Cadast
 | BIZ-07-002 | O Portal deve permitir acesso anônimo (sem login) para funcionalidades públicas: consulta de imóveis por endereço/inscrição/matrícula, visualização de layers públicas e impressão de imagem do imóvel. |
 | BIZ-07-003 | O Portal deve permitir acesso autenticado (com login) para funcionalidades restritas: consulta de imóveis vinculados ao CPF, emissão de certidões, solicitação de ITBI, interação com fiscalizações e abertura de protocolos. |
 | BIZ-07-004 | Quando logado, o sistema deve exibir automaticamente os imóveis vinculados ao CPF do cidadão no mapa. |
+| BIZ-07-005 | O sistema deve implementar autenticação via Login Único do Gov.Br (Federal), conforme especificações de implementação do Gov.Br, permitindo configurar as credenciais de integração (client_id, secret) por tenant. |
+| BIZ-07-006 | O sistema deve implementar mecanismo de Captcha via Cloudflare Turnstile em formulários públicos e tela de login, com possibilidade de configurar credenciais (site key e secret key) exclusivas por cliente/tenant. |
 
 ### 2.2 Consulta de Imóveis
 
 | ID | Requisito |
 |----|-----------|
-| BIZ-07-005 | O cidadão deve poder consultar imóveis por múltiplos critérios: CPF (quando logado), endereço, número de cadastro, matrícula ou inscrição imobiliária. |
-| BIZ-07-006 | Ao selecionar um imóvel, o sistema deve exibir as informações públicas autorizadas pelo município (endereço, área, zoneamento, etc.). |
-| BIZ-07-007 | Informações restritas (dados de proprietário, débitos detalhados) devem ser exibidas apenas para o cidadão autenticado e vinculado ao imóvel. |
+| BIZ-07-007 | O cidadão deve poder consultar imóveis por múltiplos critérios: CPF (quando logado), endereço, número de cadastro, matrícula ou inscrição imobiliária. |
+| BIZ-07-008 | Ao selecionar um imóvel, o sistema deve exibir as informações públicas autorizadas pelo município (endereço, área, zoneamento, etc.). |
+| BIZ-07-009 | Informações restritas (dados de proprietário, débitos detalhados) devem ser exibidas apenas para o cidadão autenticado e vinculado ao imóvel. |
 
 ### 2.3 Emissão de Certidões e Documentos
 
 | ID | Requisito |
 |----|-----------|
-| BIZ-07-008 | O sistema deve permitir a emissão online de certidões pelo cidadão, a partir de catálogo configurável pela municipalidade. |
-| BIZ-07-009 | O Administrador do Sistema deve poder cadastrar e configurar os tipos de documentos/certidões emitíveis: template, dados incluídos, regras de elegibilidade e eventual taxa. |
-| BIZ-07-010 | A meta é disponibilizar pelo menos 3 tipos de certidão em 6 meses e 6+ tipos em 12 meses (ex.: confrontação, débitos, avaliação, uso do solo, localização, certidão negativa). |
-| BIZ-07-011 | Certidões emitidas devem possuir código de verificação de autenticidade (ex.: hash ou QR code). |
+| BIZ-07-010 | O sistema deve permitir a emissão online de certidões pelo cidadão, a partir de catálogo configurável pela municipalidade. |
+| BIZ-07-011 | O Administrador do Sistema deve poder cadastrar e configurar os tipos de documentos/certidões emitíveis: template, dados incluídos, regras de elegibilidade e eventual taxa. |
+| BIZ-07-012 | A meta é disponibilizar pelo menos 3 tipos de certidão em 6 meses e 6+ tipos em 12 meses (ex.: confrontação, débitos, avaliação, uso do solo, localização, certidão negativa). |
+| BIZ-07-013 | Certidões emitidas devem possuir código de verificação de autenticidade (ex.: hash ou QR code). |
 
 ### 2.4 Solicitação de ITBI
 
 | ID | Requisito |
 |----|-----------|
-| BIZ-07-012 | O cidadão autenticado deve poder solicitar ITBI online, informando dados da transação (imóvel, comprador, vendedor, valor). |
-| BIZ-07-013 | O cálculo do ITBI deve aplicar as alíquotas e regras vigentes do município (BIZ-02-009). |
-| BIZ-07-014 | O sistema deve gerar guia de recolhimento do ITBI para pagamento pelo cidadão. |
+| BIZ-07-014 | O cidadão autenticado deve poder solicitar ITBI online, informando dados da transação (imóvel, comprador, vendedor, valor). |
+| BIZ-07-015 | O cálculo do ITBI deve aplicar as alíquotas e regras vigentes do município (BIZ-02-009). |
+| BIZ-07-016 | O sistema deve gerar guia de recolhimento do ITBI para pagamento pelo cidadão. |
 
 ### 2.5 Interação com Fiscalizações
 
 | ID | Requisito |
 |----|-----------|
-| BIZ-07-015 | O cidadão autenticado deve poder visualizar fiscalizações em andamento vinculadas aos seus imóveis. |
-| BIZ-07-016 | O cidadão deve poder responder a notificações de fiscalização, enviando documentos e questionamentos via Portal. |
+| BIZ-07-017 | O cidadão autenticado deve poder visualizar fiscalizações em andamento vinculadas aos seus imóveis. |
+| BIZ-07-018 | O cidadão deve poder responder a notificações de fiscalização, enviando documentos e questionamentos via Portal. |
 
 ### 2.6 Abertura de Protocolos
 
 | ID | Requisito |
 |----|-----------|
-| BIZ-07-017 | O cidadão deve poder abrir protocolos/solicitações junto à prefeitura via Portal. |
-| BIZ-07-018 | A abertura de protocolos deve suportar integração com sistemas de protocolo terceiros, quando configurada pelo município. |
+| BIZ-07-019 | O cidadão deve poder abrir protocolos/solicitações junto à prefeitura via Portal. |
+| BIZ-07-020 | A abertura de protocolos deve suportar integração com sistemas de protocolo terceiros, quando configurada pelo município. |
 
 ### 2.7 Camadas e Visualização
 
 | ID | Requisito |
 |----|-----------|
-| BIZ-07-019 | O cidadão deve poder controlar a visibilidade das camadas (layers) públicas no mapa. |
-| BIZ-07-020 | O cidadão deve poder imprimir ou exportar imagem do imóvel visualizado no mapa. |
+| BIZ-07-021 | O cidadão deve poder controlar a visibilidade das camadas (layers) públicas no mapa. |
+| BIZ-07-022 | O cidadão deve poder imprimir ou exportar imagem do imóvel visualizado no mapa. |
 
 ---
 
